@@ -12,8 +12,8 @@ for w in ['!',',','.','?','-s','-ly','</s>','s']:
     stop_words.append(w)
 
 # 加载数据路径
-path = '/home/tzl/Projects/Competition/data/kg/tkbc_processed_data'
-file_name = 'rel_id'
+path = '/home/tzl/NLP_data_augment/data/kg/tkbc_processed_data'
+file_name = 'ent_id'
 
 #近义词随机替换。这里传入的words是一个列表, eg:"hello world".split(" ") or ["hello","world"]
 def synonym_replacement(words, n):
@@ -115,5 +115,5 @@ with open(path + "/" + file_name, "r", encoding='utf-8') as file:
         data_processed[id] = interdict
 
 data_processed = json.dumps(data_processed, ensure_ascii=False, indent=4)
-with open("/home/tzl/Projects/Competition/data_new/" + file_name + ".json", 'w', encoding='utf-8') as f:
+with open("/home/tzl/NLP_data_augment/data_new/" + file_name + ".json", 'w', encoding='utf-8') as f:
     f.write(data_processed)
